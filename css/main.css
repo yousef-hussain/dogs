@@ -1,0 +1,292 @@
+@import url("base.css");
+
+/* ############################# start header ############################# */
+header {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  transition: background-color 0.6s ease-in-out;
+}
+header.active {
+  background-color: #00000080;
+  backdrop-filter: blur(10px);
+}
+header .logo-content {
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+header .logo-content .logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #FFF;
+  cursor: context-menu;
+  cursor: pointer;
+}
+
+header .menu-products {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu-products .list-product .product-item {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFF;
+  text-transform: capitalize;
+}
+
+header .menu-products  .list-product .drop-menu .drop-list {
+  text-transform: capitalize;
+}
+
+header .search-container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .search-container .search-content {
+  background-color: #FFF;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+header .search-container .search-content .search-input {
+  background-color: transparent;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+header .search-container .search-content:hover .search-input,
+header .search-container .search-content .search-input:focus {
+  width: 170px;
+}
+
+/* ############################# end header ############################# */
+
+/* ############################# start main ############################# */
+
+.main {
+  height:100vh  ;
+}
+
+.main .swiper {
+  height: 100%;
+}
+
+.main .swiper .swiper-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .swiper .swiper-slide::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main .swiper .swiper-slide .swiper-content {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.main .swiper .swiper-slide .swiper-content .title {
+  color: #FFF;
+  margin-bottom: 10px;
+  width: 55%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main .swiper .swiper-slide .swiper-content .btn {
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: 600;
+  height: 50px;
+  min-width: 150px;
+  color: green;
+  background-color: transparent;
+  border: 2px solid green;
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 0;
+  transition: 0.5s color ease-in-out;
+  overflow: hidden;
+}
+
+.main .swiper .swiper-slide .swiper-content .btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: green;
+  border-radius: 10px;
+  transition: 0.5s all ease-in-out;
+}
+.main .swiper .swiper-slide .swiper-content .btn:hover {
+  color: #FFF;
+}
+.main .swiper .swiper-slide .swiper-content .btn:hover::after {
+  width: 100%;
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #FFF;
+}
+
+.swiper-container-free-mode > .swiper-wrapper{
+  transition-timing-function : linear;
+}
+
+
+/* ############################# end main ############################# */
+/* ############################# start products ############################# */
+
+.product {
+  height: 100vh;
+}
+
+.product .content-container,
+.product .images-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product .content-container .product-content {
+  max-width: 90%;
+  transform: translateY(10%);
+}
+
+.product .content-container .product-content .title {
+  text-align: center;
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.product .content-container .product-content .title-product {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.product .content-container .product-content .about-product {
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+.product .content-container .product-content .about-product .product-list {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product .content-container .product-content .btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.5s ease-in-out;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.product .content-container .product-content .btn:hover {
+  color: #FFF;
+}
+.product .content-container .product-content .btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: green;
+  border-radius: 50px;
+  transition: 0.5s all ease-in-out;
+}
+.product .content-container .product-content .btn:hover::after {
+  width: 100%;
+}
+
+.product .images-container .images-content {
+  width: 100%;
+  min-height: 410px;
+  position: relative;
+  z-index: 0;
+  transform: translateY(30px);
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product:nth-child(odd) .images-container .images-content {
+  justify-content: end;
+}
+
+.product .images-container .images-content .img {
+  border: 1px solid #AAA;
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+/* ############################# end products ############################# */
+/* ############################# start footer ############################# */
+
+
+
+
+
+/* ############################# end footer ############################# */
+
+
